@@ -19,6 +19,6 @@ main {
   display: flex;
 }
 
-/* .nav {
-    background-color: ;
-  } */
+.footer {
+  background-color: rgb(5, 68, 54);
+}
