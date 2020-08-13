@@ -62,6 +62,13 @@ main {
   font-size: 40px;
 }
 
+.login {
+  margin-top: -20px;
+  font-family: "Roboto Slab", serif;
+  color: black;
+  font-size: 40px;
+}
+
 .button {
   margin-top: 70px;
   display: flex;
@@ -74,6 +81,11 @@ main {
 
 #student {
   margin-right: 5px;
+}
+
+.forms {
+  background-color: whitesmoke;
+  back
 }
 
 @media screen and (max-width: 900px) {
