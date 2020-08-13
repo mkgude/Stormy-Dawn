@@ -7,17 +7,28 @@ module.exports = function (sequelize, DataTypes) {
         len: [1],
       },
     },
-    body: {
+    biography: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [1],
+        len: [50],
       },
     },
-    category: {
+    languages: {
       type: DataTypes.STRING,
-      defaultValue: "Personal",
+    },
+    volunteer_email: {
+      type: DataTypes.STRING,
+    },
+    volunteer_linkedin: {
+      type: DataTypes.STRING,
+    },
+    volunteer_github: {
+      type: DataTypes.STRING,
+    },
+    volunteer_portfolio: {
+      type: DataTypes.STRING,
     },
   });
-  return Post;
+  return Volunteer;
 };
