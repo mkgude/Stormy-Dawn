@@ -104,3 +104,16 @@ app.post("/api/addNpoUser", function (req, res) {
 
   res.status(204).end();
 });
+
+
+// volunteer updates their user info (updated on volunteer profile page)
+
+// npo updates user info
+// change/update profile info (updated on NPO profile page)
+
+// npo updates project info
+// adds user to team (updated on project page)
+// changes description of the project (updated on project page)
+
+// npo adds review to volunteer info
+// review is posted to volunteer profile page
