@@ -1,5 +1,5 @@
-module.exports = function (sequelize, DataTypes) {
-  var Volunteer = sequelize.define("Volunteer", {
+module.exports = function(sequelize, DataTypes) {
+  const Volunteer = sequelize.define("Volunteer", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -17,16 +17,16 @@ module.exports = function (sequelize, DataTypes) {
     languages: {
       type: DataTypes.STRING,
     },
-    volunteer_email: {
+    email: {
       type: DataTypes.STRING,
     },
-    volunteer_linkedin: {
+    linkedin: {
       type: DataTypes.STRING,
     },
-    volunteer_github: {
+    github: {
       type: DataTypes.STRING,
     },
-    volunteer_portfolio: {
+    portfolio: {
       type: DataTypes.STRING,
     },
   });

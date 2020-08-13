@@ -1,5 +1,5 @@
-module.exports = function (sequelize, DataTypes) {
-  var NPO = sequelize.define("NPO", {
+module.exports = function(sequelize, DataTypes) {
+  const NPO = sequelize.define("NPO", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -26,7 +26,7 @@ module.exports = function (sequelize, DataTypes) {
     },
   });
 
-  NPO.associate = function (models) {
+  NPO.associate = function(models) {
     NPO.hasMany(models.Projects, {
       onDelete: "cascade",
     });
