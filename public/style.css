@@ -19,6 +19,30 @@ main {
   display: flex;
 }
 
+.nav {
+  background-color: rgb(7, 66, 56);
+}
+
 .footer {
-  background-color: rgb(5, 68, 54);
+  background-color: rgb(7, 66, 56);
+}
+
+.welcome {
+  text-align: center;
+  font-family: "Dancing Script", cursive;
+  color: azure;
+  font-size: 140px;
+}
+
+.slogan {
+  margin-top: -10px;
+  text-align: center;
+  font-family: "Sanchez", serif;
+  color: azure;
+  font-size: 50px;
+  font-weight: 300;
+}
+
+.button {
+  margin: auto 50px;
 }
