@@ -17,41 +17,53 @@ main {
 .main {
   background-image: url(https://images.pexels.com/photos/3740471/pexels-photo-3740471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .nav {
   background-color: rgb(7, 66, 56);
-  font-family: "Sanchez", serif;
+  font-family: "Rock Salt", cursive;
 }
 
 .footer {
   background-color: rgb(7, 66, 56);
   display: flex;
   color: azure;
-  min-height: 10vh;
-  font-family: "Sanchez", serif;
+  min-height: 10px;
+  font-family: "Roboto Slab", serif;
+}
+
+.footer .container {
+  margin-bottom: 10px;
+}
+
+.font {
+  font-family: "Roboto Slab", serif;
 }
 
 .welcome {
-  margin-top: 50px;
-  text-align: center;
-  justify-content: center;
+  margin-top: 40px;
   font-family: "Dancing Script", cursive;
-  color: azure;
-  font-size: 140px;
+  color: white;
+  font-size: 120px;
+}
+
+.logo {
+  height: 45px;
+  width: 55px;
+  justify-content: center;
 }
 
 .slogan {
-  margin-top: -10;
-  text-align: center;
-  font-family: "Sanchez", serif;
-  color: azure;
+  margin-top: -20px;
+  font-family: "Roboto Slab", serif;
+  color: white;
   font-size: 40px;
-  font-weight: 300;
 }
 
 .button {
-  margin-top: 50px;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
 }
@@ -62,4 +74,114 @@ main {
 
 #student {
   margin-right: 5px;
+}
+
+@media screen and (max-width: 900px) {
+  /* .nav {
+    height: auto;
+  } */
+  .welcome {
+    max-width: 90%;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 0px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  /* .nav {
+    height: auto;
+  } */
+  .welcome {
+    max-width: 90%;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 0px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  /* .nav {
+    height: auto;
+  } */
+  .welcome {
+    max-width: 90%;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 0px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  /* .nav {
+    height: auto;
+  } */
+  .welcome {
+    max-width: 90%;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 0px auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  /* .nav {
+    height: auto;
+  } */
+  .welcome {
+    max-width: 90%;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 0px auto -20 auto;
+  }
+
+  .brand-logo {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  /* .nav {
+    height: 100px;
+  } */
+  .welcome {
+    max-width: 90%;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 0px auto -20 auto;
+  }
+
+  .brand-logo {
+    width: 90%;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  /* .nav {
+    height: 100px;
+  } */
+  .welcome {
+    width: 90%;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 0px auto -20 auto;
+  }
+
+  .brand-logo {
+    max-width: 90%;
+  }
 }
