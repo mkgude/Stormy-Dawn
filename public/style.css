@@ -20,5 +20,46 @@ main {
 }
 
 .nav {
-  background-color: lemonchiffon;
+  background-color: rgb(7, 66, 56);
+  font-family: "Sanchez", serif;
+}
+
+.footer {
+  background-color: rgb(7, 66, 56);
+  display: flex;
+  color: azure;
+  min-height: 10vh;
+  font-family: "Sanchez", serif;
+}
+
+.welcome {
+  margin-top: 50px;
+  text-align: center;
+  justify-content: center;
+  font-family: "Dancing Script", cursive;
+  color: azure;
+  font-size: 140px;
+}
+
+.slogan {
+  margin-top: -10;
+  text-align: center;
+  font-family: "Sanchez", serif;
+  color: azure;
+  font-size: 40px;
+  font-weight: 300;
+}
+
+.button {
+  margin-top: 50px;
+  display: flex;
+  justify-content: center;
+}
+
+#npo {
+  margin-left: 5px;
+}
+
+#student {
+  margin-right: 5px;
 }

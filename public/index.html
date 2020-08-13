@@ -9,6 +9,15 @@
     />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <link rel="stylesheet" href="style.css" media="screen" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Sanchez&display=swap"
+      rel="stylesheet"
+    />
+
     <title>The Beehive Project</title>
   </head>
   <body>
@@ -16,7 +25,7 @@
       <div class="nav-wrapper">
         <a href="#!" class="brand-logo center">The Beehive Project ✜</a>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"
-          ><i class="material-icons">Menu</i></a
+          ><i class="material-icons">menu</i></a
         >
         <ul class="right hide-on-med-and-down">
           <li><a href="">About Us</a></li>
@@ -30,8 +39,35 @@
       <li><a href="">Contact</a></li>
     </ul>
 
-    <main class="main"></main>
-    <footer class="page-footer footer footer-copyright">
+    <main class="main">
+      <div>
+        <h1 class="welcome">
+          Welcome
+        </h1>
+        <h3 class="slogan">
+          Connecting Non-Profit Organization to Student Coders
+        </h3>
+        <div class="button">
+          <button
+            id="student"
+            class="btn waves-effect waves-light btn-large"
+            type="submit"
+            name="action"
+          >
+            Student Login
+          </button>
+          <button
+            id="npo"
+            class="btn waves-effect waves-light btn-large"
+            type="submit"
+            name="action"
+          >
+            Non-Profit Login
+          </button>
+        </div>
+      </div>
+    </main>
+    <footer class="footer footer-copyright">
       <div class="container center">
         © 2020 The Beehive Project ✜
       </div>
