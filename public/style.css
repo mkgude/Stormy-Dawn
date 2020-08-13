@@ -47,6 +47,7 @@ main {
   font-family: "Dancing Script", cursive;
   color: white;
   font-size: 120px;
+  text-shadow: 4px 4px black;
 }
 
 .logo {
@@ -60,6 +61,7 @@ main {
   font-family: "Roboto Slab", serif;
   color: white;
   font-size: 40px;
+  text-shadow: 2px 2px black;
 }
 
 .login {
