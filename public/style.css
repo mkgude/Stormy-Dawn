@@ -84,14 +84,15 @@ main {
 }
 
 .forms {
-  background-color: whitesmoke;
-  back
+  background-color: rgb(227, 250, 246);
+  border-radius: 25px;
+  /* border: black solid 2px; */
 }
 
 @media screen and (max-width: 900px) {
-  /* .nav {
+  .nav {
     height: auto;
-  } */
+  }
   .welcome {
     max-width: 90%;
   }
@@ -99,101 +100,28 @@ main {
   .slogan {
     max-width: 90%;
     margin: 0px auto 0 auto;
+  }
+
+  .main {
+    max-width: 100%;
   }
 }
 
 @media screen and (max-width: 765px) {
-  /* .nav {
-    height: auto;
-  } */
+  .brand-logo {
+    font-size: 20px;
+  }
   .welcome {
-    max-width: 90%;
+    font-size: 80px;
+    margin-top: 100px;
   }
 
   .slogan {
     max-width: 90%;
-    margin: 0px auto 0 auto;
-  }
-}
-
-@media screen and (max-width: 650px) {
-  /* .nav {
-    height: auto;
-  } */
-  .welcome {
-    max-width: 90%;
-  }
-
-  .slogan {
-    max-width: 90%;
-    margin: 0px auto 0 auto;
-  }
-}
-
-@media screen and (max-width: 550px) {
-  /* .nav {
-    height: auto;
-  } */
-  .welcome {
-    max-width: 90%;
-  }
-
-  .slogan {
-    max-width: 90%;
-    margin: 0px auto 0 auto;
-  }
-}
-
-@media screen and (max-width: 500px) {
-  /* .nav {
-    height: auto;
-  } */
-  .welcome {
-    max-width: 90%;
-  }
-
-  .slogan {
-    max-width: 90%;
-    margin: 0px auto -20 auto;
+    font-size: 30px;
   }
 
   .brand-logo {
     width: 90%;
-  }
-}
-
-@media screen and (max-width: 400px) {
-  /* .nav {
-    height: 100px;
-  } */
-  .welcome {
-    max-width: 90%;
-  }
-
-  .slogan {
-    max-width: 90%;
-    margin: 0px auto -20 auto;
-  }
-
-  .brand-logo {
-    width: 90%;
-  }
-}
-
-@media screen and (max-width: 300px) {
-  /* .nav {
-    height: 100px;
-  } */
-  .welcome {
-    width: 90%;
-  }
-
-  .slogan {
-    max-width: 90%;
-    margin: 0px auto -20 auto;
-  }
-
-  .brand-logo {
-    max-width: 90%;
   }
 }
