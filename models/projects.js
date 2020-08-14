@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [50]
+        len: [1, 500]
       }
     },
     language: {
@@ -16,10 +16,15 @@ module.exports = function(sequelize, DataTypes) {
       allowNull: false
     }
   });
-
+  // We're saying that a Post should belong to an Author
+  // A Post can't be created without an Author due to the foreign key constraint
   Project.associate = function(models) {
-    Project.belongsTo(models.NPO, {
+    Project.belongsTo(models.User, {
       foreignKey: {
+        allowNull: false
+      },
+      role: {
+        as: true,
         allowNull: false
       }
     });
