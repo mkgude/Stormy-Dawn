@@ -39,7 +39,7 @@ module.exports = function(sequelize, DataTypes) {
       type: DataTypes.STRING
     },
     role: {
-      type: DataTypes.ENUM('volunteer', 'NPO')
+      type: DataTypes.ENUM("volunteer", "NPO")
     },
     // The email cannot be null, and must be a proper email before creation
     email: {
