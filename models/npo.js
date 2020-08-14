@@ -32,5 +32,5 @@ module.exports = function(sequelize, DataTypes) {
     });
   };
 
-  return Post;
+  return NPO;
 };
