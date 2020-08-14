@@ -1,34 +1,34 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const Volunteer = sequelize.define("Volunteer", {
     name: {
       type: DataTypes.STRING,
       allowNull: false,
       validate: {
-        len: [1],
-      },
+        len: [1]
+      }
     },
     biography: {
       type: DataTypes.TEXT,
       allowNull: false,
       validate: {
-        len: [50],
-      },
+        len: [50]
+      }
     },
     languages: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     email: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     linkedin: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     github: {
-      type: DataTypes.STRING,
+      type: DataTypes.STRING
     },
     portfolio: {
-      type: DataTypes.STRING,
-    },
+      type: DataTypes.STRING
+    }
   });
   return Volunteer;
 };
