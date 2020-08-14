@@ -1,5 +1,12 @@
 module.exports = function(sequelize, DataTypes) {
   const Project = sequelize.define("Project", {
+    ID: {
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      autoIncrement: true,
+      primaryKey: true
+    },
+
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -12,8 +19,22 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     language: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY,
       allowNull: false
+    },
+    volunteerId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: user,
+        key: id
+      }
+    },
+    npoId: {
+      type: DataTypes.INTEGER,
+      references: {
+        model: user,
+        key: id
+      }
     }
   });
 
