@@ -50,6 +50,7 @@ module.exports = function(sequelize, DataTypes) {
     // role true for npo, false for volunteer (determined via jquery)
     role: {
       type: DataTypes.BOOLEAN,
+      defaultValue: false,
       allowNull: false
     }
   });
