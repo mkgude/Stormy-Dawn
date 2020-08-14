@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
   "name": "stormydawn",
+=======
+  "name": "stormy-dawn",
+>>>>>>> 6bd50133a06ff0144cf60259db284b25162c1ee9
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
