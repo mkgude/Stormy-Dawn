@@ -11,22 +11,17 @@ module.exports = function(sequelize, DataTypes) {
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false,
       validate: {
         len: [1]
       }
     },
     biography: {
       type: DataTypes.TEXT,
-      allowNull: false,
       validate: {
         len: [50]
       }
     },
     languages: {
-      type: DataTypes.STRING
-    },
-    email: {
       type: DataTypes.STRING
     },
     linkedin: {
@@ -37,9 +32,6 @@ module.exports = function(sequelize, DataTypes) {
     },
     portfolio: {
       type: DataTypes.STRING
-    },
-    role: {
-      type: DataTypes.ENUM("volunteer", "NPO")
     },
     // The email cannot be null, and must be a proper email before creation
     email: {
@@ -53,6 +45,12 @@ module.exports = function(sequelize, DataTypes) {
     // The password cannot be null
     password: {
       type: DataTypes.STRING,
+      allowNull: false
+    },
+    // role true for npo, false for volunteer (determined via jquery)
+    role: {
+      type: DataTypes.BOOLEAN,
+      defaultValue: false,
       allowNull: false
     }
   });
