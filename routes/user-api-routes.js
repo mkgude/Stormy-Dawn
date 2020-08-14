@@ -6,7 +6,7 @@ module.exports = function(app) {
     // We set the value to an array of the models we want to include in a left outer join
     // In this case, just db.Project
     db.User.findAll({
-      include: [db.Project]
+      // include: [db.Project]
     }).then(dbUser => {
       res.json(dbUser);
     });
@@ -19,81 +19,62 @@ module.exports = function(app) {
     db.User.findOne({
       where: {
         id: req.params.id
-      },
-      include: [db.Project]
-    }).then(dbUser => {
-      res.json(dbUser);
-    });
-  });
-
-  app.post("/api/users", (req, res) => {
-    db.User.create(req.body).then(dbUser => {
-      res.json(dbUser);
-    });
-  });
-
-  app.delete("/api/users/:id", (req, res) => {
-    db.User.destroy({
-      where: {
-        id: req.params.id
       }
+      // include: [db.Project]
     }).then(dbUser => {
       res.json(dbUser);
     });
-  });
-  // If a user sends data to create a new user (volunteer)
-  app.post("/api/addVolunteerUser", (req, res) => {
-    // Take the request...
-    const volunteerUser = req.body;
-
-    // Create a routeName
-
-    // Using a RegEx Pattern to remove spaces from volunteerUser.name
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    const routeName = volunteerUser.name.replace(/\s+/g, "").toLowerCase();
-
-    // Then add the volunteerUser to the database using sequelize
-    volunteerUser.create({
-      routeName: routeName,
-      name: volunteerUser.name,
-      email: volunteerUser.email,
-      languages: volunteerUser.languages,
-      github: volunteerUser.github
-    });
-
-    res.status(204).end();
-  });
-
-  // If a user sends data to create a new user (npo)
-  app.post("/api/addNpoUser", (req, res) => {
-    // Take the request...
-    const npoUser = req.body;
-
-    // Create a routeName
-
-    // Using a RegEx Pattern to remove spaces from npoUser.name
-    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-    const routeName = npoUser.name.replace(/\s+/g, "").toLowerCase();
-
-    // Then add the npoUser to the database using sequelize
-    npoUser.create({
-      routeName: routeName,
-      name: npoUser.name,
-      email: npoUser.email
-    });
-
-    res.status(204).end();
   });
 
   // volunteer updates their user info (updated on volunteer profile page)
+  app.put("/api/updateVolunteer", (req, res) => {
+    // Take the request...
+    const volunteerUser = req.body;
+
+    // Then add the volunteerUser to the database using sequelize
+    db.User.update(
+      {
+        name: volunteerUser.name,
+        email: volunteerUser.email,
+        languages: volunteerUser.languages,
+        github: volunteerUser.github,
+        biography: volunteerUser.biography,
+        portfolio: volunteerUser.portfolio,
+        linkedin: volunteerUser.linkedin
+      },
+      {
+        where: {
+          id: req.user.id
+        }
+      }
+    );
+    res.status(204).json(volunteerUser);
+  });
 
   // npo updates user info
-  // change/update profile info (updated on NPO profile page)
+  app.put("/api/updateNpo", (req, res) => {
+    // Take the request...
+    const npoUser = req.body;
 
-  // npo updates project info
-  // adds user to team (updated on project page)
-  // changes description of the project (updated on project page)
+    // Then add the npoUser to the database using sequelize
+    db.User.update(
+      {
+        name: npoUser.name,
+        email: npoUser.email,
+        languages: npoUser.languages,
+        biography: npoUser.biography,
+        website: npoUser.website
+      },
+      {
+        where: {
+          id: req.user.id
+        }
+      }
+    );
+    res.status(204).json(npoUser);
+  });
 
+  // PHASE 2
   // npo adds review to volunteer info
   // review is posted to volunteer profile page
 };
