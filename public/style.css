@@ -17,41 +17,62 @@ main {
 .main {
   background-image: url(https://images.pexels.com/photos/3740471/pexels-photo-3740471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
   display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 .nav {
   background-color: rgb(7, 66, 56);
-  font-family: "Sanchez", serif;
+  font-family: "Rock Salt", cursive;
 }
 
 .footer {
   background-color: rgb(7, 66, 56);
   display: flex;
   color: azure;
-  min-height: 10vh;
-  font-family: "Sanchez", serif;
+  min-height: 10px;
+  font-family: "Roboto Slab", serif;
+}
+
+.footer .container {
+  margin-bottom: 10px;
+}
+
+.font {
+  font-family: "Roboto Slab", serif;
 }
 
 .welcome {
-  margin-top: 50px;
-  text-align: center;
-  justify-content: center;
+  margin-top: 40px;
   font-family: "Dancing Script", cursive;
-  color: azure;
-  font-size: 140px;
+  color: white;
+  font-size: 120px;
+  text-shadow: 4px 4px black;
+}
+
+.logo {
+  height: 45px;
+  width: 55px;
+  justify-content: center;
 }
 
 .slogan {
-  margin-top: -10;
-  text-align: center;
-  font-family: "Sanchez", serif;
-  color: azure;
+  margin-top: -20px;
+  font-family: "Roboto Slab", serif;
+  color: white;
   font-size: 40px;
-  font-weight: 300;
+  text-shadow: 2px 2px black;
+}
+
+.login {
+  margin-top: -20px;
+  font-family: "Roboto Slab", serif;
+  color: black;
+  font-size: 40px;
 }
 
 .button {
-  margin-top: 50px;
+  margin-top: 70px;
   display: flex;
   justify-content: center;
 }
@@ -62,4 +83,47 @@ main {
 
 #student {
   margin-right: 5px;
+}
+
+.forms {
+  background-color: rgb(227, 250, 246);
+  border-radius: 25px;
+  /* border: black solid 2px; */
+}
+
+@media screen and (max-width: 900px) {
+  .nav {
+    height: auto;
+  }
+  .welcome {
+    max-width: 90%;
+  }
+
+  .slogan {
+    max-width: 90%;
+    margin: 0px auto 0 auto;
+  }
+
+  .main {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 765px) {
+  .brand-logo {
+    font-size: 20px;
+  }
+  .welcome {
+    font-size: 80px;
+    margin-top: 100px;
+  }
+
+  .slogan {
+    max-width: 90%;
+    font-size: 30px;
+  }
+
+  .brand-logo {
+    width: 90%;
+  }
 }
