@@ -27,3 +27,25 @@ module.exports = function(app) {
     res.sendFile(path.join(__dirname, "../public/members.html"));
   });
 };
+
+// :volunteerID
+app.get("/volunteerDashboard/", (req, res) => {
+  res.sendFile(
+    path.join(__dirname, "RandomRepositorypublic\volunteerdash.html")
+  );
+});
+
+// route that afterlogin :npoID
+app.get("/npoDashboard/", (req, res) => {
+  res.sendFile(path.join(__dirname, "RandomRepositorypublic\npodash.html"));
+});
+
+// route for project page :projectID
+app.get("project", (req, res) => {
+  res.sendFile(path.join(__dirname, "RandomRepositorypublicproject.html"));
+});
+
+// all route loads the all.html page,
+app.get("/all", (req, res) => {
+  res.sendFile(path.join(__dirname, "RandomRepositorypublicall.html"));
+});
