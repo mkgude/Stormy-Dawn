@@ -41,4 +41,59 @@ module.exports = function(app) {
       res.json(dbUser);
     });
   });
+  // If a user sends data to create a new user (volunteer)
+  app.post("/api/addVolunteerUser", (req, res) => {
+    // Take the request...
+    const volunteerUser = req.body;
+
+    // Create a routeName
+
+    // Using a RegEx Pattern to remove spaces from volunteerUser.name
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    const routeName = volunteerUser.name.replace(/\s+/g, "").toLowerCase();
+
+    // Then add the volunteerUser to the database using sequelize
+    volunteerUser.create({
+      routeName: routeName,
+      name: volunteerUser.name,
+      email: volunteerUser.email,
+      languages: volunteerUser.languages,
+      github: volunteerUser.github
+    });
+
+    res.status(204).end();
+  });
+
+  // If a user sends data to create a new user (npo)
+  app.post("/api/addNpoUser", (req, res) => {
+    // Take the request...
+    const npoUser = req.body;
+
+    // Create a routeName
+
+    // Using a RegEx Pattern to remove spaces from npoUser.name
+    // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
+    const routeName = npoUser.name.replace(/\s+/g, "").toLowerCase();
+
+    // Then add the npoUser to the database using sequelize
+    npoUser.create({
+      routeName: routeName,
+      name: npoUser.name,
+      email: npoUser.email
+    });
+
+    res.status(204).end();
+  });
+
+  // volunteer updates their user info (updated on volunteer profile page)
+
+  // npo updates user info
+  // change/update profile info (updated on NPO profile page)
+
+  // npo updates project info
+  // adds user to team (updated on project page)
+  // changes description of the project (updated on project page)
+
+  // npo adds review to volunteer info
+  // review is posted to volunteer profile page
 };
