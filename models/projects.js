@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const Project = sequelize.define("Project", {
     title: {
       type: DataTypes.STRING,
@@ -17,7 +17,7 @@ module.exports = function (sequelize, DataTypes) {
     }
   });
 
-  Project.associate = function (models) {
+  Project.associate = function(models) {
     Project.belongsTo(models.NPO, {
       foreignKey: {
         allowNull: false
