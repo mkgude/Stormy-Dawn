@@ -5,7 +5,7 @@ module.exports = {
     password: "Ididit2@20",
     database: "stormy_dawn",
     host: "127.0.0.1",
-    dialect: "mysql",
+    dialect: "mysql"
   },
   test: {
     username: "root",
@@ -16,6 +16,6 @@ module.exports = {
   },
   production: {
     use_env_variable: "JAWSDB_URL",
-    dialect: "mysql",
-  },
+    dialect: "mysql"
+  }
 };
