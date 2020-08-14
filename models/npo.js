@@ -7,12 +7,12 @@ module.exports = function (sequelize, DataTypes) {
         len: [1]
       }
     },
-    contact_name: {
+    contactName: {
       type: DataTypes.TEXT,
       allowNull: false,
       len: [1]
     },
-    contact_email: {
+    contactEmail: {
       type: DataTypes.STRING,
       allowNull: false,
       len: [1]
