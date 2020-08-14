@@ -2,7 +2,7 @@
 const db = require("../models");
 const passport = require("../config/passport");
 
-module.exports = function (app) {
+module.exports = function(app) {
   // Using the passport.authenticate middleware with our local strategy.
   // If the user has valid login credentials, send them to the members page.
   // Otherwise the user will be sent an error
@@ -10,7 +10,7 @@ module.exports = function (app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id,
+      id: req.user.id
     });
   });
 
@@ -19,13 +19,13 @@ module.exports = function (app) {
   // otherwise send back an error
   app.post("/api/signup", (req, res) => {
     db.User.create({
-        email: req.body.email,
-        password: req.body.password,
-      })
+      email: req.body.email,
+      password: req.body.password
+    })
       .then(() => {
         res.redirect(307, "/api/login");
       })
-      .catch((err) => {
+      .catch(err => {
         res.status(401).json(err);
       });
   });
@@ -46,31 +46,31 @@ module.exports = function (app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id,
+        id: req.user.id
       });
     }
   });
 };
 
 //Route for getting some data on the volunteer / volunteer DB
-app.get("/api/user_data/:volunteer", (req, res) => {});
+// app.get("/api/user_data/:volunteer", (req, res) => {});
 
 //Route for getting some data on the volunteer / volunteer DB
-app.get("/api/user_data/:npo", (req, res) => {});
+// app.get("/api/user_data/:npo", (req, res) => {});
 
 //Route for getting some data on the volunteer / volunteer DB
-app.get("/api/user_data/:projects", (req, res) => {});
+// app.get("/api/user_data/:projects", (req, res) => {});
 
 // If a user sends data to create a new user (volunteer)
-app.post("/api/addVolunteerUser", function (req, res) {
+app.post("/api/addVolunteerUser", (req, res) => {
   // Take the request...
-  var volunteerUser = req.body;
+  const volunteerUser = req.body;
 
   // Create a routeName
 
   // Using a RegEx Pattern to remove spaces from volunteerUser.name
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  var routeName = volunteerUser.name.replace(/\s+/g, "").toLowerCase();
+  const routeName = volunteerUser.name.replace(/\s+/g, "").toLowerCase();
 
   // Then add the volunteerUser to the database using sequelize
   volunteerUser.create({
@@ -85,15 +85,15 @@ app.post("/api/addVolunteerUser", function (req, res) {
 });
 
 // If a user sends data to create a new user (npo)
-app.post("/api/addNpoUser", function (req, res) {
+app.post("/api/addNpoUser", (req, res) => {
   // Take the request...
-  var npoUser = req.body;
+  const npoUser = req.body;
 
   // Create a routeName
 
   // Using a RegEx Pattern to remove spaces from npoUser.name
   // You can read more about RegEx Patterns later https://www.regexbuddy.com/regex.html
-  var routeName = npoUser.name.replace(/\s+/g, "").toLowerCase();
+  const routeName = npoUser.name.replace(/\s+/g, "").toLowerCase();
 
   // Then add the npoUser to the database using sequelize
   npoUser.create({
@@ -104,7 +104,6 @@ app.post("/api/addNpoUser", function (req, res) {
 
   res.status(204).end();
 });
-
 
 // volunteer updates their user info (updated on volunteer profile page)
 

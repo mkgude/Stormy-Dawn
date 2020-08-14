@@ -4,7 +4,7 @@ const path = require("path");
 // Requiring our custom middleware for checking if a user is logged in
 const isAuthenticated = require("../config/middleware/isAuthenticated");
 
-module.exports = function (app) {
+module.exports = function(app) {
   app.get("/", (req, res) => {
     // If the user already has an account send them to the members page
     if (req.user) {
@@ -31,25 +31,21 @@ module.exports = function (app) {
 // :volunteerID
 app.get("/volunteerDashboard/", (req, res) => {
   res.sendFile(
-    path.join(__dirname, "RandomRepository\public\volunteerdash.html")
+    path.join(__dirname, "RandomRepositorypublic\volunteerdash.html")
   );
 });
 
 // route that afterlogin :npoID
 app.get("/npoDashboard/", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "RandomRepository\public\npodash.html")
-  );
+  res.sendFile(path.join(__dirname, "RandomRepositorypublic\npodash.html"));
 });
 
 // route for project page :projectID
 app.get("project", (req, res) => {
-  res.sendFile(
-    path.join(__dirname, "RandomRepository\public\project.html")
-  );
+  res.sendFile(path.join(__dirname, "RandomRepositorypublicproject.html"));
 });
 
 // all route loads the all.html page,
-app.get("/all", function (req, res) {
-  res.sendFile(path.join(__dirname, "RandomRepository\public\all.html"));
+app.get("/all", (req, res) => {
+  res.sendFile(path.join(__dirname, "RandomRepositorypublicall.html"));
 });
