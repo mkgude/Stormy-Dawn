@@ -6,15 +6,24 @@ const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
-    // If the user already has an account send them to the members page
+    // If the user already has an account send them to the user page
     if (req.user) {
       res.redirect("/members");
     }
-    res.sendFile(path.join(__dirname, "../public/signup.html"));
+    res.sendFile(path.join(__dirname, "../public/index.html"));
   });
 
-  app.get("/login", (req, res) => {
-    // If the user already has an account send them to the members page
+  //TODO: volunteer logins
+  app.get("/login/volunteer", (req, res) => {
+    // If the user already has an account send them to the user page
+    if (req.user) {
+      res.redirect("/members");
+    }
+    res.sendFile(path.join(__dirname, "../public/login.html"));
+  });
+  //TODO: npo login
+  app.get("/login/npo", (req, res) => {
+    // If the user already has an account send them to the user page
     if (req.user) {
       res.redirect("/members");
     }
