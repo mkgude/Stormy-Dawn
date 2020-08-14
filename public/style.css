@@ -64,6 +64,14 @@ main {
   text-shadow: 2px 2px black;
 }
 
+.title{
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px black;
+  margin-top: -150px;
+}
+
 .login {
   margin-top: -20px;
   font-family: "Roboto Slab", serif;
@@ -85,10 +93,24 @@ main {
   margin-right: 5px;
 }
 
+.table {
+  justify-content: center;
+  background-color: white;
+  border-radius: 25px;
+
+}
+
 .forms {
   background-color: rgb(227, 250, 246);
   border-radius: 25px;
   /* border: black solid 2px; */
+}
+
+.mainblog{
+  background-image: url(https://images.pexels.com/photos/442574/pexels-photo-442574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  display: flex;
+  text-align: center;
+  justify-content: center;
 }
 
 @media screen and (max-width: 900px) {
