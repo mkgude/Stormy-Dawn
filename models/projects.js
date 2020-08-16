@@ -1,5 +1,12 @@
-module.exports = function(sequelize, DataTypes) {
+module.exports = function (sequelize, DataTypes) {
   const Project = sequelize.define("Project", {
+    ID: {
+      type: DataTypes.INTEGER,
+      autoIncrement: true,
+      primaryKey: true,
+      allowNull: false
+    },
+
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -12,7 +19,7 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     language: {
-      type: DataTypes.STRING,
+      type: DataTypes.ARRAY,
       allowNull: false
     },
     createdAt: {
@@ -42,3 +49,5 @@ module.exports = function(sequelize, DataTypes) {
 
   return Project;
 };
+
+
