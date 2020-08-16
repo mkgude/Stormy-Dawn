@@ -1,40 +1,40 @@
 "use strict";
 module.exports = {
-  up: async queryInterface => {
+  up: async (queryInterface, Sequelize) => {
     await queryInterface.createTable("Users", {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
-        type: Sequelize.INTEGER
+        type: Sequelize.DataTypes.INTEGER
       },
       name: {
-        type: Sequelize.STRING,
+        type: Sequelize.DataTypes.STRING,
         validate: {
           len: [1]
         }
       },
       biography: {
-        type: Sequelize.TEXT,
+        type: Sequelize.DataTypes.TEXT,
         validate: {
           len: [1, 150]
         }
       },
       languages: {
-        type: Sequelize.STRING
+        type: Sequelize.DataTypes.STRING
       },
       linkedin: {
-        type: Sequelize.STRING
+        type: Sequelize.DataTypes.STRING
       },
       github: {
-        type: Sequelize.STRING
+        type: Sequelize.DataTypes.STRING
       },
       portfolio: {
-        type: Sequelize.STRING
+        type: Sequelize.DataTypes.STRING
       },
       // The email cannot be null, and must be a proper email before creation
       email: {
-        type: Sequelize.STRING,
+        type: Sequelize.DataTypes.STRING,
         allowNull: false,
         unique: true,
         validate: {
@@ -43,28 +43,28 @@ module.exports = {
       },
       // The password cannot be null
       password: {
-        type: Sequelize.STRING,
+        type: Sequelize.DataTypes.STRING,
         allowNull: false
       },
       // role true for npo, false for volunteer (determined via jquery)
       role: {
-        type: Sequelize.BOOLEAN,
+        type: Sequelize.DataTypes.BOOLEAN,
         defaultValue: false,
         allowNull: false
       },
       //website
       website: {
-        type: Sequelize.STRING
+        type: Sequelize.DataTypes.STRING
       },
       createdAt: {
+        type: Sequelize.DataTypes.DATEONLY,
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: new Date()
+        defaultValue: Sequelize.fn("now")
       },
       updatedAt: {
+        type: Sequelize.DataTypes.DATEONLY,
         allowNull: false,
-        type: Sequelize.DATE,
-        defaultValue: new Date()
+        defaultValue: Sequelize.fn("now")
       }
     });
   },

@@ -16,6 +16,7 @@ module.exports = {
   },
 
   down: async queryInterface => {
-    await queryInterface.bulkDelete("Project", null, {});
+    await queryInterface.dropTable;
+    ("Project");
   }
 };

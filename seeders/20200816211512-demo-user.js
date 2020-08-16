@@ -6,14 +6,14 @@ module.exports = {
       "User",
       [
         {
-          name: "",
-          biography: "",
-          languages: "",
+          name: "nino",
+          biography: "nnnn",
+          languages: "ssss",
           linkedin: "",
           github: "",
           portfolio: "",
-          email: "",
-          password: "",
+          email: "nnn@gmail",
+          password: "123",
           role: "",
           website: ""
         }
