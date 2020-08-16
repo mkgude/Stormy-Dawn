@@ -33,7 +33,7 @@ module.exports = function(app) {
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
   app.get("/profile", isAuthenticated, (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/user.html"));
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
   // volunteer profile view
   app.get("/volunteer-dashboard", (req, res) => {
@@ -42,11 +42,11 @@ module.exports = function(app) {
 
   // npo profile view
   app.get("/npo-dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/x.html"));
+    res.sendFile(path.join(__dirname, "../public/profile-manage.html"));
   });
 
   // route for project page :projectID
-  app.get("project", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/x.html"));
+  app.get("/project", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/newproject.html"));
   });
 };
