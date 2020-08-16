@@ -50,6 +50,16 @@ module.exports = function(sequelize, DataTypes) {
     //website
     website: {
       type: DataTypes.STRING
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: new Date()
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: new Date()
     }
   });
   User.associate = function(models) {

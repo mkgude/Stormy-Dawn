@@ -14,6 +14,16 @@ module.exports = function(sequelize, DataTypes) {
     language: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    createdAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: new Date()
+    },
+    updatedAt: {
+      allowNull: false,
+      type: DataTypes.DATE,
+      defaultValue: new Date()
     }
   });
   // We're saying that a Post should belong to an Author
