@@ -113,6 +113,10 @@ main {
   justify-content: center;
 }
 
+.volunteer{
+  display: block;
+}
+
 @media screen and (max-width: 900px) {
   .nav {
     height: auto;
