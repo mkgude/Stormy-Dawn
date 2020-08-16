@@ -3,18 +3,18 @@ $(document).ready(() => {
   const signUpForm = $("form.signup");
   const emailInput = $("input#email-input");
   const passwordInput = $("input#password-input");
-  const volunteerInput = $("input#volunter");
+  const volunteerInput = $("input#volunteer");
   const npoInput = $("input#npo");
-
+  let role;
   // When the signup button is clicked, we validate the email and password are not blank
   signUpForm.on("submit", event => {
     event.preventDefault();
-    let role;
     if (volunteerInput) {
       role = false;
     } else if (npoInput) {
       role = true;
     }
+    console.log(role);
     const userData = {
       email: emailInput.val().trim(),
       password: passwordInput.val().trim(),
