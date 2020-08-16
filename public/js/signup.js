@@ -40,7 +40,7 @@ $(document).ready(() => {
       role: role
     })
       .then(() => {
-        window.location.replace("/profile");
+        window.location.replace("/blog");
         // If there's an error, handle it by throwing up a bootstrap alert
       })
       .catch(handleLoginErr);
