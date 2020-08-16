@@ -14,6 +14,22 @@ module.exports = function(sequelize, DataTypes) {
     language: {
       type: DataTypes.STRING,
       allowNull: false
+    },
+    name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    website: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    cause: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    location: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
   });
   // We're saying that a Post should belong to an Author
@@ -21,10 +37,6 @@ module.exports = function(sequelize, DataTypes) {
   Project.associate = function(models) {
     Project.belongsTo(models.User, {
       foreignKey: {
-        allowNull: false
-      },
-      role: {
-        as: true,
         allowNull: false
       }
     });
