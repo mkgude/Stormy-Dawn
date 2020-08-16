@@ -95,6 +95,7 @@ main {
   .nav {
     height: auto;
   }
+
   .welcome {
     max-width: 90%;
   }
@@ -113,6 +114,7 @@ main {
   .brand-logo {
     font-size: 20px;
   }
+
   .welcome {
     font-size: 80px;
     margin-top: 100px;
