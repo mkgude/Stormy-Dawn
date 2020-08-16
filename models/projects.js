@@ -1,4 +1,4 @@
-module.exports = function (sequelize, DataTypes) {
+module.exports = function(sequelize, DataTypes) {
   const Project = sequelize.define("Project", {
     ID: {
       type: DataTypes.INTEGER,
@@ -46,8 +46,6 @@ module.exports = function (sequelize, DataTypes) {
       }
     });
   };
-
+  // return project
   return Project;
 };
-
-
