@@ -1,12 +1,5 @@
 module.exports = function(sequelize, DataTypes) {
   const Project = sequelize.define("Project", {
-    ID: {
-      type: DataTypes.INTEGER,
-      autoIncrement: true,
-      primaryKey: true,
-      allowNull: false
-    },
-
     title: {
       type: DataTypes.STRING,
       allowNull: false
@@ -19,18 +12,8 @@ module.exports = function(sequelize, DataTypes) {
       }
     },
     language: {
-      type: DataTypes.ARRAY,
+      type: DataTypes.STRING,
       allowNull: false
-    },
-    createdAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-      defaultValue: new Date()
-    },
-    updatedAt: {
-      allowNull: false,
-      type: DataTypes.DATE,
-      defaultValue: new Date()
     }
   });
   // We're saying that a Post should belong to an Author
@@ -46,6 +29,6 @@ module.exports = function(sequelize, DataTypes) {
       }
     });
   };
-  // return project
+
   return Project;
 };
