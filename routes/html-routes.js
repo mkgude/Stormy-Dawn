@@ -42,11 +42,11 @@ module.exports = function(app) {
 
   // npo profile view
   app.get("/npo-dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/x.html"));
+    res.sendFile(path.join(__dirname, "../public/profile-manage.html"));
   });
 
   // route for project page :projectID
-  app.get("project", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/x.html"));
+  app.get("/project", (req, res) => {
+    res.sendFile(path.join(__dirname, "../public/newproject.html"));
   });
 };
