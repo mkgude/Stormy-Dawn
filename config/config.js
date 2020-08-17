@@ -2,7 +2,7 @@ require("dotenv").config();
 module.exports = {
   development: {
     username: "root",
-    password: "mysqlpassword",
+    password: process.env.DB_PASSWORD,
     database: "stormy_dawn",
     host: "127.0.0.1",
     dialect: "mysql"
