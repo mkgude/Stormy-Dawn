@@ -21,6 +21,15 @@ main {
   justify-content: center;
 }
 
+.mainlogin {
+  /* background-image: url(/public/assets/fadedbee.png); */
+  height: 100%; 
+  background-size: cover;
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
 .nav {
   background-color: rgb(7, 66, 56);
   font-family: "Rock Salt", cursive;
@@ -92,6 +101,12 @@ main {
 
 #npo {
   margin-left: 5px;
+}
+
+.join {
+  font-family: "Roboto Slab", serif;
+  font-size: 60px;
+  text-align: center;
 }
 
 #student {
