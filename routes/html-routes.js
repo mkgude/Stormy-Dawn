@@ -32,16 +32,6 @@ module.exports = function(app) {
   app.get("/blog", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
-  // volunteer blog view
-  app.get("/volunteer-dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/x.html"));
-  });
-
-  // npo blog view
-  app.get("/npo-dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/profile-manage.html"));
-  });
-
   // route for project page :projectID
   app.get("/project", (req, res) => {
     res.sendFile(path.join(__dirname, "../public/newproject.html"));
