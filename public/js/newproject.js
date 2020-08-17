@@ -6,10 +6,6 @@ const causeInput = $("#cause");
 const websiteInput = $("#website");
 const locationInput = $("#location");
 
-console.log(titleInput);
-console.log(nameInput);
-
-
 $(document).ready(() => {
     $(".submit").on("submit", event => {
         event.preventDefault();
@@ -21,11 +17,10 @@ $(document).ready(() => {
             language: languageInput.val().trim(),
             cause: causeInput.val().trim(),
             website: websiteInput.val().trim(),
-            location: locationInput.val().trim(),
-            UserId: "2"
+            location: locationInput.val().trim()
 
         };
-        console.log("new project:" + newProject);
+        // console.log("new project:" + newProject);
         $.ajax("/api/projects/", {
             type: POST,
             data: newProject
