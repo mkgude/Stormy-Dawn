@@ -35,7 +35,7 @@ main {
 }
 
 .footer .container {
-  margin-bottom: 10px;
+  margin-bottom: 15px;
 }
 
 .font {
@@ -51,9 +51,10 @@ main {
 }
 
 .logo {
-  height: 45px;
-  width: 55px;
+  height: 80px;
+  width: 60px;
   justify-content: center;
+  margin: 45px 20px auto 20px;
 }
 
 .slogan {
@@ -62,6 +63,14 @@ main {
   color: white;
   font-size: 40px;
   text-shadow: 2px 2px black;
+}
+
+.title{
+  font-family: "Roboto Slab", serif;
+  color: white;
+  font-size: 40px;
+  text-shadow: 2px 2px black;
+  margin-top: -150px;
 }
 
 .login {
@@ -85,11 +94,60 @@ main {
   margin-right: 5px;
 }
 
+.table {
+  justify-content: center;
+  background-color: white;
+  border-radius: 25px;
+
+}
+
 .forms {
   background-color: rgb(227, 250, 246);
   border-radius: 25px;
   /* border: black solid 2px; */
 }
+
+.mainblog{
+  background-image: url(https://images.pexels.com/photos/442574/pexels-photo-442574.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  display: flex;
+  text-align: center;
+  justify-content: center;
+}
+
+.member-name{
+  color: white;
+}
+
+.volunteer{
+  margin: 50px 100px;
+  color: black;
+  font-family: "Roboto Slab", serif;
+  font-size: 25px;
+  text-shadow: 0;
+
+}
+
+.logout{
+  font-family: "Roboto Slab", serif;
+  margin-left: 20px;
+}
+
+.volunteer-profile{
+  margin-top: 40px;
+  font-family: "Dancing Script", cursive;
+  color: white;
+  background-image: url(https://images.pexels.com/photos/3740471/pexels-photo-3740471.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260);
+  text-align: center;
+  justify-content: center;
+}
+
+.profile{
+  text-shadow: 2px 2px black;
+  font-size: 60px;
+
+}
+
+
 
 @media screen and (max-width: 900px) {
   .nav {
