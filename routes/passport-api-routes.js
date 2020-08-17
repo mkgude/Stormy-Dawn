@@ -10,10 +10,8 @@ module.exports = function(app) {
     // Sending back a password, even a hashed password, isn't a good idea
     res.json({
       email: req.user.email,
-      id: req.user.id,
-      role: req.user.role
+      id: req.user.id
     });
-    res.json(null);
   });
 
   // Route for signing up a user. The user's password is automatically hashed and stored securely thanks to
@@ -22,8 +20,8 @@ module.exports = function(app) {
   app.post("/api/signup", (req, res) => {
     db.User.create({
       email: req.body.email,
-      password: req.body.password,
-      role: req.body.role
+      password: req.body.password
+      // role: req.body.role
     })
       .then(() => {
         res.redirect(307, "/api/login");
@@ -49,8 +47,8 @@ module.exports = function(app) {
       // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
-        id: req.user.id,
-        role: req.body.role
+        id: req.user.id
+        // role: req.body.role
       });
     }
   });

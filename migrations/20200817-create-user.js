@@ -46,12 +46,6 @@ module.exports = {
         type: Sequelize.DataTypes.STRING,
         allowNull: false
       },
-      // role true for npo, false for volunteer (determined via jquery)
-      role: {
-        type: Sequelize.DataTypes.BOOLEAN,
-        defaultValue: false,
-        allowNull: false
-      },
       //website
       website: {
         type: Sequelize.DataTypes.STRING
