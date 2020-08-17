@@ -1,5 +1,6 @@
 // Requiring path to so we can use relative routes to our HTML files
 const path = require("path");
+const isAuthenticated = require("../config/middleware/isAuthenticated");
 
 module.exports = function(app) {
   app.get("/", (req, res) => {
@@ -29,17 +30,14 @@ module.exports = function(app) {
 
   // Here we've add our isAuthenticated middleware to this route.
   // If a user who is not logged in tries to access this route they will be redirected to the signup page
-  app.get("/blog", (req, res) => {
+  app.get("/blog", isAuthenticated, (req, res) => {
+    console.log(req.user);
     res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
-  // volunteer blog view
-  app.get("/volunteer-dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/x.html"));
-  });
 
-  // npo blog view
-  app.get("/npo-dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/profile-manage.html"));
+  app.get("/volunteerBlog", (req, res) => {
+    console.log(req.user);
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
   // route for project page :projectID
