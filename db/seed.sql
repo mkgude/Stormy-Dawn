@@ -1,0 +1,10 @@
+INSERT INTO user (name, biography, languages, linkedin, github, portfolio, email, password, role, website)
+VALUES ("Sally", "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id necessitatibus perferendis saepe voluptatum ipsum corporis doloribus ducimus veritatis error officia iusto culpa quasi, est obcaecati quidem unde! Porro, et.", "Javascript, HTML/CSS", "https://www.linkedin.com/", "https://github.com/", "https://www.google.com/", "sally@email.com", "password", false), ("Billy", "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id necessitatibus perferendis saepe voluptatum ipsum corporis doloribus ducimus veritatis error officia iusto culpa quasi, est obcaecati quidem unde! Porro, et.", "Javascript, HTML/CSS", "https://www.linkedin.com/", "https://github.com/", "https://www.google.com/", "billy@email.com", "password", false);
+
+INSERT INTO user (name, biography, languages, email, password, role, website)
+VALUES ("Habitat for Humanity", "Habitat for Humanity is a nonprofit organization that helps families build and improve places to call home. We believe affordable housing plays a critical role in strong and stable communities. Learn about our work.", "Python, MongoDB", "habitatforhumanity@email.com", "password", true, "https://www.habitat.org/"), ("Soup Kitchen", "Build a platform for volunteers to log in and reserve their time slots.", "Javascript, Node.js", "soupkitchen@email.com", "password", true, "https://www.citymeals.org/")
+
+INSERT INTO project (title, biography, languages, email, password, website)
+VALUES ("Website revamp for Habitat for Humanity", "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id necessitatibus perferendis saepe voluptatum ipsum corporis doloribus ducimus veritatis error officia iusto culpa quasi, est obcaecati quidem unde! Porro, et.", "Python"),("Build Volunteer Platform - Soup Kitchen", "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id necessitatibus perferendis saepe voluptatum ipsum corporis doloribus ducimus veritatis error officia iusto culpa quasi, est obcaecati quidem unde! Porro, et.", "Javascript, Node.js")
+
+
