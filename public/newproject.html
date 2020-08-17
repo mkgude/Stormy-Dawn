@@ -22,60 +22,60 @@
       <a href="/" class="brand-logo center">The Beehive</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li class="font"><a href="/blog">View Projects</a></li>
-        <li class="font"><a href="/project">Add Projects</a></li>
+        <li class="font"><a href="blog.html">View Projects</a></li>
+        <li class="font"><a href="newproject.html">Add Projects</a></li>
         <li class="font"><a class="left" href="/logout">Logout</a></li>
       </ul>
     </div>
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="/blog">View Projects</a></li>   
-      <li><a href="/project">Add Projects</a></li>         
+      <li><a href="blog.html">View Projects</a></li>
+      <li><a href="newproject.html">Add Projects</a></li>
       <li><a href="/logout">Logout</a></li>
     </ul>
   </nav>
-    <div class="container hidden">
-        <div class="row top-30">
-            <div class="col-md-2 col-sm-2">
-                <a class="btn btn-light" href="/blog">Go to Blog</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-md-6 offset-md-3">
-                <form id="project">
-                    <div class="form-group">
-                        <label for="title">Project Title:</label>
-                        <input placeholder="Title" type="text" class="form-control" id="title">
-                        <br />
-                        <label for="name">Non-Profit Organization Name:</label>
-                        <input placeholder="NPO" type="text" class="form-control" id="name">
-                        <br />
-                        <label for="description">Project Description:</label>
-                        <textarea placeholder="Description" class="form-control" rows="10"
-                            id="description"></textarea>
-                        <br />
-                        <label for="languages">Project Languages: </label>
-                        <input placeholder="Languages" type="text" class="form-control" id="language">
-                        <br />
-                        <label for="cause">Our Cause: </label>
-                        <input placeholder="Cause" type="text" class="form-control" id="cause">
-                        <br />
-                        <label for="website">Website: </label>
-                        <input placeholder="Website" type="text" class="form-control" id="website">
-                        <br />
-                        <label for="location">Our Location: </label>
-                        <input placeholder="Location" type="text" class="form-control" id="location">
-                        <br />
-                        <button id="submitBtn" type="submit" class="btn btn-success submit">Submit</button>
-                    </div>
-                </form>
-            </div>
-        </div>
+  <div class="container hidden">
+    <div class="row top-30">
+      <div class="col-md-2 col-sm-2">
+        <a class="btn btn-light" href="/blog">Go to Blog</a>
+      </div>
     </div>
-    <footer class="page-footer footer footer-copyright">
-        <div class="container center">
-          © 2020 The Beehive Project
-        </div>
-      </footer>
-      <script src="js/newproject.js" type="text/javascript"></script>
-    </body>
+    <div class="row">
+      <div class="col-md-6 offset-md-3">
+        <form class="project">
+          <div class="form-group">
+            <label for="title">Project Title:</label>
+            <input placeholder="Title" type="text" class="form-control" id="title">
+            <br />
+            <label for="name">Non-Profit Organization Name:</label>
+            <input placeholder="NPO" type="text" class="form-control" id="name">
+            <br />
+            <label for="description">Project Description:</label>
+            <textarea placeholder="Description" class="form-control" rows="10" id="description"></textarea>
+            <br />
+            <label for="languages">Project Languages: </label>
+            <input placeholder="Languages" type="text" class="form-control" id="language">
+            <br />
+            <label for="cause">Our Cause: </label>
+            <input placeholder="Cause" type="text" class="form-control" id="cause">
+            <br />
+            <label for="website">Website: </label>
+            <input placeholder="Website" type="text" class="form-control" id="website">
+            <br />
+            <label for="location">Our Location: </label>
+            <input placeholder="Location" type="text" class="form-control" id="location">
+            <br />
+            <button id="submitBtn" type="submit" class="btn btn-success submit">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <footer class="page-footer footer footer-copyright">
+    <div class="container center">
+      © 2020 The Beehive Project
+    </div>
+  </footer>
+  <script src="js/newproject.js" type="text/javascript"></script>
+</body>
+
 </html>
