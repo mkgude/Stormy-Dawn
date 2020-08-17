@@ -94,6 +94,12 @@ main {
   margin-left: 5px;
 }
 
+.join {
+  font-family: "Roboto Slab", serif;
+  font-size: 60px;
+  text-align: center;
+}
+
 #student {
   margin-right: 5px;
 }
