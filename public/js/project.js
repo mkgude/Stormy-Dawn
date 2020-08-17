@@ -1,25 +1,27 @@
 $(document).ready(() => {
   /* global moment */
-  $(".create-form").on("submit", function(event) {
+  $(".create-form").on("submit", event => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
-    var newQuote = {
-      author: $("#auth").val().trim(),
-      quote: $("#quo").val().trim()
+    const newQuote = {
+      author: $("#auth")
+        .val()
+        .trim(),
+      quote: $("#quo")
+        .val()
+        .trim()
     };
 
     // Send the POST request.
     $.ajax("/api/quotes", {
       type: "POST",
       data: newQuote
-    }).then(
-      function() {
-        console.log("created new quote");
-        // Reload the page to get the updated list
-        location.reload();
-      }
-    );
+    }).then(() => {
+      console.log("created new quote");
+      // Reload the page to get the updated list
+      location.reload();
+    });
 
     // blogContainer holds all of our projects
     const blogContainer = $(".blog-container");
@@ -142,21 +144,14 @@ $(document).ready(() => {
 
     // This function displays a message when there are no projects
     function displayEmpty(id) {
-      const query = window.location.search;
-      let partial = "";
       if (id) {
         partial = " for User #" + id;
       }
       blogContainer.empty();
       const messageH2 = $("<h2>");
       messageH2.css({ "text-align": "center", "margin-top": "50px" });
-      messageH2.html(
-        "No projects yet" +
-        partial +
-        ", navigate <a href='/cms" +
-        query +
-        "'>here</a> in order to get started."
-      );
+      messageH2.html("No projects yet");
       blogContainer.append(messageH2);
     }
   });
+});
