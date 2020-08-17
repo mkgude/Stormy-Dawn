@@ -63,12 +63,19 @@ module.exports = function(app) {
 
   // PUT route for updating projects
   app.put("/api/projects", (req, res) => {
-    db.Project.update(req.body, {
-      where: {
-        id: req.body.id
+    const project = req.body;
+    db.Project.update(
+      {
+        title: project.title,
+        description: project.description,
+        language: project.language
+      },
+      {
+        where: {
+          id: req.project.id
+        }
       }
-    }).then(dbProject => {
-      res.json(dbProject);
-    });
+    );
+    res.json();
   });
 };
