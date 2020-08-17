@@ -45,7 +45,15 @@ module.exports = function(app) {
 
   // POST route for saving a new project
   app.post("/api/projects", (req, res) => {
-    db.Project.create(req.body).then(dbProject => {
+    db.Project.create({
+      title: req.body.title,
+      name: req.body.name,
+      description: req.body.description,
+      language: req.body.language,
+      cause: req.body.cause,
+      website: req.body.website,
+      location: req.body.location
+    }).then(dbProject => {
       res.json(dbProject);
     });
   });

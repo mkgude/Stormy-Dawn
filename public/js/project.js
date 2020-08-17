@@ -1,6 +1,6 @@
 $(document).ready(() => {
   /* global moment */
-  $(".create-form").on("submit", event => {
+  $(".submit").on("submit", event => {
     // Make sure to preventDefault on a submit event.
     event.preventDefault();
 
