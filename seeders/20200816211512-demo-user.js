@@ -14,7 +14,6 @@ module.exports = {
           portfolio: "",
           email: "nnn@gmail",
           password: "123",
-          role: "",
           website: ""
         }
       ],
