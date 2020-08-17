@@ -86,6 +86,10 @@ main {
   justify-content: center;
 }
 
+.btn {
+  margin-top: 20px;
+}
+
 #npo {
   margin-left: 5px;
 }
