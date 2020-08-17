@@ -33,16 +33,11 @@ module.exports = function(app) {
   app.get("/blog", isAuthenticated, (req, res) => {
     console.log(req.user);
     res.sendFile(path.join(__dirname, "../public/blog.html"));
-    console.log("lol");
-  });
-  // volunteer blog view
-  app.get("/volunteer-dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/x.html"));
   });
 
-  // npo blog view
-  app.get("/npo-dashboard", (req, res) => {
-    res.sendFile(path.join(__dirname, "../public/profile-manage.html"));
+  app.get("/volunteerBlog", (req, res) => {
+    console.log(req.user);
+    res.sendFile(path.join(__dirname, "../public/blog.html"));
   });
 
   // route for project page :projectID
