@@ -22,7 +22,7 @@ main {
 }
 
 .mainlogin {
-  background-image: url(/public/assets/fadedbee.png);
+  /* background-image: url(/public/assets/fadedbee.png); */
   height: 100%; 
   background-size: cover;
   display: flex;
