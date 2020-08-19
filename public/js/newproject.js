@@ -1,157 +1,88 @@
 $(document).ready(() => {
-  /* global moment */
-  $(".create-form").on("submit", event => {
-    // Make sure to preventDefault on a submit event.
+  // const loginForm = $("form.project");
+  const titleInput = $("input#title");
+  const nameInput = $("input#name");
+  const descriptionInput = $("#description");
+  const languageInput = $("#language");
+  const causeInput = $("input#cause");
+  const websiteInput = $("input#website");
+  const locationInput = $("input#location");
+  $("#submitBtn").click(event => {
     event.preventDefault();
-
-    const newQuote = {
-      author: $("#auth")
-        .val()
-        .trim(),
-      quote: $("#quo")
-        .val()
-        .trim()
+    console.log("Form submitted");
+    const projectData = {
+      title: titleInput.val().trim(),
+      name: nameInput.val().trim(),
+      description: descriptionInput.val().trim(),
+      language: languageInput.val().trim(),
+      cause: causeInput.val().trim(),
+      website: websiteInput.val().trim(),
+      location: locationInput.val().trim()
     };
-
-    // Send the POST request.
-    $.ajax("/api/quotes", {
-      type: "POST",
-      data: newQuote
-    }).then(() => {
-      console.log("created new quote");
-      // Reload the page to get the updated list
-      location.reload();
-    });
-
-    // blogContainer holds all of our projects
-    const blogContainer = $(".blog-container");
-    const projectCategorySelect = $("#category");
-    // Click events for the edit and delete buttons
-    $(document).on("click", "button.delete", handleProjectDelete);
-    $(document).on("click", "button.edit", handleProjectEdit);
-    // Variable to hold our projects
-    let projects;
-
-    // The code below handles the case where we want to get blog projects for a specific user
-    // Looks for a query param in the url for user_id
-    const url = window.location.search;
-    let userId;
-    if (url.indexOf("?user_id=") !== -1) {
-      userId = url.split("=")[1];
-      getProjects(userId);
+    if (!projectData.title || !projectData.name) {
+      return;
     }
-    // If there's no userId we just get all projects as usual
-    else {
-      getProjects();
-    }
-
-    // This function grabs projects from the database and updates the view
-    function getProjects(user) {
-      userId = user || "";
-      if (userId) {
-        userId = "/?user_id=" + userId;
-      }
-      $.get("/api/projects" + userId, data => {
-        console.log("Projects", data);
-        projects = data;
-        if (!projects || !projects.length) {
-          displayEmpty(user);
-        } else {
-          initializeRows();
-        }
-      });
-    }
-
-    // This function does an API call to delete projects
-    function deleteProject(id) {
-      $.ajax({
-        method: "DELETE",
-        url: "/api/projects/" + id
-      }).then(() => {
-        getProjects(projectCategorySelect.val());
-      });
-    }
-
-    // InitializeRows handles appending all of our constructed project HTML inside blogContainer
-    // TODO: change from row to 1 poroject
-    function initializeRows() {
-      blogContainer.empty();
-      const projectsToAdd = [];
-      for (let i = 0; i < projects.length; i++) {
-        projectsToAdd.push(createNewRow(projects[i]));
-      }
-      blogContainer.append(projectsToAdd);
-    }
-
-    // This function constructs a project's HTML
-    function createNewRow(project) {
-      let formattedDate = new Date(project.createdAt);
-      formattedDate = moment(formattedDate).format("MMMM Do YYYY, h:mm:ss a");
-      const newProjectCard = $("<div>");
-      newProjectCard.addClass("card");
-      const newProjectCardHeading = $("<div>");
-      newProjectCardHeading.addClass("card-header");
-      const deleteBtn = $("<button>");
-      deleteBtn.text("x");
-      deleteBtn.addClass("delete btn btn-danger");
-      const editBtn = $("<button>");
-      editBtn.text("EDIT");
-      editBtn.addClass("edit btn btn-info");
-      const newProjectTitle = $("<h2>");
-      const newProjectDate = $("<small>");
-      const newProjectUser = $("<h5>");
-      newProjectUser.text("Written by: " + project.User.name);
-      newProjectUser.css({
-        float: "right",
-        color: "blue",
-        "margin-top": "-10px"
-      });
-      const newProjectCardBody = $("<div>");
-      newProjectCardBody.addClass("card-body");
-      const newProjectBody = $("<p>");
-      newProjectTitle.text(project.title + " ");
-      newProjectBody.text(project.body);
-      newProjectDate.text(formattedDate);
-      newProjectTitle.append(newProjectDate);
-      newProjectCardHeading.append(deleteBtn);
-      newProjectCardHeading.append(editBtn);
-      newProjectCardHeading.append(newProjectTitle);
-      newProjectCardHeading.append(newProjectUser);
-      newProjectCardBody.append(newProjectBody);
-      newProjectCard.append(newProjectCardHeading);
-      newProjectCard.append(newProjectCardBody);
-      newProjectCard.data("project", project);
-      return newProjectCard;
-    }
-
-    // This function figures out which project we want to delete and then calls deleteProject
-    function handleProjectDelete() {
-      const currentProject = $(this)
-        .parent()
-        .parent()
-        .data("project");
-      deleteProject(currentProject.id);
-    }
-
-    // This function figures out which project we want to edit and takes it to the appropriate url
-    function handleProjectEdit() {
-      const currentProject = $(this)
-        .parent()
-        .parent()
-        .data("project");
-      window.location.href = "/cms?project_id=" + currentProject.id;
-    }
-
-    // This function displays a message when there are no projects
-    function displayEmpty(id) {
-      if (id) {
-        partial = " for User #" + id;
-      }
-      blogContainer.empty();
-      const messageH2 = $("<h2>");
-      messageH2.css({ "text-align": "center", "margin-top": "50px" });
-      messageH2.html("No projects yet");
-      blogContainer.append(messageH2);
-    }
+    // $.ajax("/api/projects", {
+    //   type: "POST",
+    //   data: projectData,
+    // }).then(() => {
+    //   window.location.replace("/blog");
+    //   // If there’s an error, log the error
+    // })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+    // If we have an email and password we run the loginUser function and clear the form
+    createProject(
+      projectData.title,
+      projectData.name,
+      projectData.description,
+      projectData.language,
+      projectData.cause,
+      projectData.website,
+      projectData.location
+    );
+    titleInput.val("");
+    nameInput.val("");
+    descriptionInput.val("");
+    languageInput.val("");
+    causeInput.val("");
+    websiteInput.val("");
+    locationInput.val("");
   });
+  function createProject(
+    title,
+    name,
+    description,
+    language,
+    cause,
+    website,
+    location
+  ) {
+    $.post("/api/projects", {
+      title: title,
+      name: name,
+      description: description,
+      language: language,
+      cause: cause,
+      website: website,
+      location: location
+    })
+      .then(() => {
+        window.location.replace("/blog");
+        // If there’s an error, log the error
+      })
+      .catch(err => {
+        console.log(err);
+      });
+  }
+
+  // function deleteProject(id) {
+  //   $.ajax({
+  //     method: "DELETE",
+  //     url: "/api/projects/" + id
+  //   }).then(() => {
+  //     getProjects(projectCategorySelect.val());
+  //   });
+  // }
 });

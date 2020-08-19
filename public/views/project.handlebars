@@ -1,137 +1,32 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://code.jquery.com/jquery-3.5.1.min.js"
-    integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
-  <link rel="stylesheet" href="style.css" media="screen" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Cormorant+Upright:wght@600&family=Dancing+Script:wght@700&family=Roboto+Slab&family=Rock+Salt&family=Slabo+27px&display=swap"
-    rel="stylesheet" />
-  <title>The Beehive Project</title>
-</head>
-
 <body>
   <nav class="nav">
-    <div class="navwrapper">
-      <a class="left" href="/logout">
-        Logout
-      </a>
-      <a href="index.html" class="brand-logo center">Your Beehive</a>
-
+    <div class="nav-wrapper">
+      <a href="/" class="brand-logo center">The Beehive</a>
       <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
       <ul class="right hide-on-med-and-down">
-        <li class="font"><a href="aboutus.html">About Us</a></li>
-        <li class="font"><a href="contact.html">Contact</a></li>
+        <li class="font"><a href="/blog">View Projects</a></li>
+        <li class="font"><a href="/project">Add Projects</a></li>
+        <li class="font"><a class="left" href="/logout">Logout</a></li>
       </ul>
-      </a>
-
     </div>
     <ul class="sidenav" id="mobile-demo">
-      <li><a href="">About Us</a></li>
-      <li><a href="">Contact</a></li>
+      <li><a href="/blog">View Projects</a></li>
+      <li><a href="/project">Add Projects</a></li>
+      <li><a href="/logout">Logout</a></li>
     </ul>
   </nav>
-  {{!-- <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Project Here</span>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus
-            fugiat aliquid doloribus accusamus voluptas quisquam consequatur
-            voluptates sint vitae autem harum delectus debitis, sapiente
-            voluptatum iure maxime adipisci ipsa ipsum!
-          </p>
-        </div>
-        <div class="card-action">
-          <a href="#">NPO profile</a>
-          <a href="#"> NPO website</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Project Here</span>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolor
-            reprehenderit nostrum eos eveniet neque assumenda expedita
-            laboriosam. Perferendis, sint omnis. Repellendus, adipisci
-            molestias natus quisquam excepturi voluptas perspiciatis vero
-            iste!
-          </p>
-        </div>
-        <div class="card-action">
-          <a href="#">NPO profile</a>
-          <a href="#"> NPO website</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Project Here</span>
-          <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ea id
-            necessitatibus perferendis saepe voluptatum ipsum corporis
-            doloribus ducimus veritatis error officia iusto culpa quasi, est
-            obcaecati quidem unde! Porro, et.
-          </p>
-        </div>
-        <div class="card-action">
-          <a href="#">NPO profile</a>
-          <a href="#"> NPO website</a>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br />
-  <div class="row">
-    <div class="col s12 m6">
-      <div class="card blue-grey darken-1">
-        <div class="card-content white-text">
-          <span class="card-title">Project Here</span>
-          <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid
-            fuga soluta deserunt molestias a cupiditate aut cumque sed at nemo
-            nesciunt, ex expedita itaque? Illum doloremque praesentium placeat
-            possimus dolores!
-          </p>
-        </div>
-        <div class="card-action">
-          <a href="#">NPO profile</a>
-          <a href="#"> NPO website</a>
-        </div>
-      </div>
-    </div>
-  </div> --}}
 
-  {{!-- attempting handlebars --}}
   <ul>
     {{#each projects}}
     {{>projects/project-block}}
     {{/each}}
   </ul>
+
   <footer class="page-footer footer footer-copyright">
     <div class="container center">
       © 2020 The Beehive Project
     </div>
   </footer>
-  <script>
-    $(".dropdown-trigger").dropdown();
-  </script>
 </body>
 
 </html>
