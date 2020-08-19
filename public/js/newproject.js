@@ -1,5 +1,5 @@
 $(document).ready(() => {
-  const loginForm = $("form.project");
+  // const loginForm = $("form.project");
   const titleInput = $("input#title");
   const nameInput = $("input#name");
   const descriptionInput = $("#description");
@@ -7,9 +7,9 @@ $(document).ready(() => {
   const causeInput = $("input#cause");
   const websiteInput = $("input#website");
   const locationInput = $("input#location");
-  loginForm.on("submit", event => {
+  $("#submitBtn").click(event => {
     event.preventDefault();
-    console.log(descriptionInput.val().trim());
+    console.log("Form submitted");
     const projectData = {
       title: titleInput.val().trim(),
       name: nameInput.val().trim(),
@@ -21,7 +21,18 @@ $(document).ready(() => {
     };
     if (!projectData.title || !projectData.name) {
       return;
-    } // If we have an email and password we run the loginUser function and clear the form
+    }
+    // $.ajax("/api/projects", {
+    //   type: "POST",
+    //   data: projectData,
+    // }).then(() => {
+    //   window.location.replace("/blog");
+    //   // If there’s an error, log the error
+    // })
+    //   .catch(err => {
+    //     console.log(err);
+    //   });
+    // If we have an email and password we run the loginUser function and clear the form
     createProject(
       projectData.title,
       projectData.name,
@@ -48,7 +59,7 @@ $(document).ready(() => {
     website,
     location
   ) {
-    $.post("/api/projects/", {
+    $.post("/api/projects", {
       title: title,
       name: name,
       description: description,
@@ -58,10 +69,20 @@ $(document).ready(() => {
       location: location
     })
       .then(() => {
-        window.location.replace("/blog"); // If there's an error, log the error
+        window.location.replace("/blog");
+        // If there’s an error, log the error
       })
       .catch(err => {
         console.log(err);
       });
   }
+
+  // function deleteProject(id) {
+  //   $.ajax({
+  //     method: "DELETE",
+  //     url: "/api/projects/" + id
+  //   }).then(() => {
+  //     getProjects(projectCategorySelect.val());
+  //   });
+  // }
 });

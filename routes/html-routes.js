@@ -38,6 +38,10 @@ module.exports = function(app) {
   app.get("/volunteerBlog", (req, res) => {
     console.log(req.user);
     res.sendFile(path.join(__dirname, "../public/blog.html"));
+    // res.render("projects", {
+    //   layout: "default",
+    //   template: "projects-template"
+    // });
   });
 
   // route for project page :projectID

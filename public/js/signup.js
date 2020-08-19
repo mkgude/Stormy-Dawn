@@ -16,7 +16,6 @@ $(document).ready(() => {
     }
     // If we have an email and password, run the signUpUser function
     signUpUser(userData.email, userData.password);
-    // userData.role
     emailInput.val("");
     passwordInput.val("");
   });
@@ -27,7 +26,6 @@ $(document).ready(() => {
     $.post("/api/signup", {
       email: email,
       password: password
-      // role: role
     })
       .then(() => {
         window.location.replace("/blog");

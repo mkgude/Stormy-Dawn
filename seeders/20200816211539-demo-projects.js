@@ -8,7 +8,11 @@ module.exports = {
         {
           title: "",
           description: "",
-          language: ""
+          languages: "",
+          name: "",
+          website: "",
+          cause: "",
+          location: ""
         }
       ],
       {}
