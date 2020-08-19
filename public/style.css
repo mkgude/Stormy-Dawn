@@ -115,6 +115,12 @@ main {
   justify-content: center;
 }
 
+.buttons {
+  display: flex;
+  justify-content: center;
+  margin: 0px 5px 10px 5px;
+}
+
 .btn {
   margin-top: 20px;
 }
